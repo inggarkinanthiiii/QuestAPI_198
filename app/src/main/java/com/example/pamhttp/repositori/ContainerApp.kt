@@ -19,7 +19,7 @@ class DefaultContainerApp : ContainerApp {
         .baseUrl(baseurl)
         .addConverterFactory(
             Json {
-                ignoreUnknownKeys = true
+                ignoreUnknownKeys = true //
                 prettyPrint = true
                 isLenient = true
             }.asConverterFactory("application/json".toMediaType())
