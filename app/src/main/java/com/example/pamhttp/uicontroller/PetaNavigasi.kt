@@ -6,7 +6,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.pamhttp.uicontroller.route.DestinasiEntry
 import com.example.pamhttp.view.DestinasiHome
+import com.example.pamhttp.view.EntrySiswaScreen
 import com.example.pamhttp.view.HomeScreen
 
 
@@ -24,7 +26,10 @@ fun HostNavigasi(
     NavHost(navController = navController, startDestination = DestinasiHome.route,
         modifier = Modifier) {
         composable(DestinasiHome.route) {
-            HomeScreen()
+            HomeScreen(navigateToItemEntry = {navController.navigate(DestinasiEntry.route)})
+        }
+        composable (DestinasiEntry.route){
+            EntrySiswaScreen(navigateBack = {navController.navigate(DestinasiHome.route)})
         }
     }
 }
