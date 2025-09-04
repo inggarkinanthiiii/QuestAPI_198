@@ -4,10 +4,10 @@
     <string name="deskripsi_no_item">Tidak ada data Siswa. Tap + untuk menambah data</string>
     <string name="nama">Nama </string>
     <string name="alamat">Alamat </string>
-    <string name="telpon">NIM</string>
+    <string name="telpon">Telpon</string>
     <string name="nama1">Nama </string>
     <string name="alamat1">Alamat </string>
-    <string name="telpon1">NIM</string>
+    <string name="telpon1">Telpon</string>
     <string name="required_field">required field</string>
     <string name="btn_submit">Submit</string>
     <string name="detail_siswa">Detail Mahasiswa</string>
@@ -22,4 +22,5 @@
     <string name="update">Edit</string>
     <string name="attention">Perhatian</string>
     <string name="tanya">Apakah Anda yakin menghapus ini?</string>
+    <string name="tambah_siswa">Tambah Siswa</string>
 </resources>
