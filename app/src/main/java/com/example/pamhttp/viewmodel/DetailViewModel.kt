@@ -29,3 +29,28 @@ class DetailViewModel(savedStateHandle: SavedStateHandle, private val repository
     init {
         getSatuSiswa()
     }
+
+    fun getSatuSiswa(){
+        viewModelScope.launch {
+            statusUIDetail = StatusUIDetail.Loading
+            statusUIDetail = try {
+                StatusUIDetail.Success(satusiswa = repositoryDataSiswa.getSatuSiswa(idSiswa))
+            }
+            catch (g: IOException){
+                StatusUIDetail.Error
+            }
+            catch (g: HttpException){
+                StatusUIDetail.Error
+            }
+        }
+    }
+    @SuppressLint("SuspiciousIndetation")
+    suspend fun hapusSatuSiswa(){
+        val resp: Response<Void> = repositoryDataSiswa.hapusSatuSiswa(idSiswa)
+        if (resp.isSuccessful){
+            println("Sukses Hapus Data : ${resp.message()}")
+        }else{
+            println("Gagal Hapus Data : ${resp.errorBody()}")
+        }
+    }
+}
