@@ -187,3 +187,26 @@ private fun BarisDetailData(
         Text(text = itemDetail, fontWeight = FontWeight.Bold)
     }
 }
+
+@Composable
+private fun DeleteConfirmationDialog(
+    onDeleteConfirm : () -> Unit,
+    onDeleteCancel : () -> Unit,
+    modifier: Modifier = Modifier
+){
+    AlertDialog(onDismissRequest = { /* Do Nothing */ },
+        title = { Text(stringResource(R.string.attention)) },
+        text = { Text(stringResource(R.string.tanya)) },
+        modifier = modifier,
+        dismissButton = {
+            OutlinedButton(onClick = onDeleteCancel) {
+                Text(text = stringResource(R.string.no))
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDeleteConfirm) {
+                Text(text = stringResource(R.string.yes))
+            }
+        }
+    )
+}
