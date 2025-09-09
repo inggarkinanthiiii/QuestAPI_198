@@ -174,3 +174,16 @@ fun DetailDataSiswa(
         }
     }
 }
+
+@Composable
+private fun BarisDetailData(
+    @StringRes labelResID : Int,
+    itemDetail : String,
+    modifier: Modifier = Modifier
+){
+    Row(modifier = modifier) {
+        Text(text = stringResource(labelResID))
+        Spacer(Modifier.weight(1f))
+        Text(text = itemDetail, fontWeight = FontWeight.Bold)
+    }
+}
