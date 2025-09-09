@@ -2,4 +2,5 @@
 ![2](app/src/main/res/drawable/data.png)
 ![1](app/src/main/res/drawable/tambah.png)
 ![2](app/src/main/res/drawable/hasil.png)
+![2](app/src/main/res/drawable/detail.png)
 
