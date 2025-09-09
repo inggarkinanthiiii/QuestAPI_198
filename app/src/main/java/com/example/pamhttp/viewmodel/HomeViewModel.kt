@@ -1,6 +1,6 @@
 package com.example.pamhttp.viewmodel
 
-import android.net.http.HttpException
+
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -9,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.mydatasiswa.modeldata.DataSiswa
 import com.example.pamhttp.repositori.RepositoryDataSiswa
 import kotlinx.coroutines.launch
+import retrofit2.HttpException
 import java.io.IOException
 
 sealed interface StatusUiSiswa {
@@ -34,7 +35,7 @@ class HomeViewModel(private val repositoryDataSiswa: RepositoryDataSiswa): ViewM
             }catch (e:IOException){
                 StatusUiSiswa.Error
             }
-            catch (e:HttpException){
+            catch (e: HttpException){
                 StatusUiSiswa.Error
             }
         }
